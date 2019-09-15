@@ -1,0 +1,17 @@
+/* ul {
+    display: flex;
+    position: top;
+    z-index: 2;
+}                */
+
+#generalJokes {
+    background-color: aqua;
+}
+
+#programmingJokes {
+    background-color: chartreuse;
+}
+
+#randomJokes {
+    background-color: darkorange;
+}
