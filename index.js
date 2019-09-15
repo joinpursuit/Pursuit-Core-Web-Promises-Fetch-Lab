@@ -26,9 +26,11 @@ function getSomeJokes(){
 		let counter = 1;
 		for(let i = 0; i < res.length; i++){
 			if(counter < 4){
-				if(jokeTracker.indexOf(res[i].id) === -1){
-					let list = document.getElementById('joke-select');
-					let jokeType = list.options[list.selectedIndex].text;
+				let list = document.getElementById('joke-select');
+				let jokeType = list.options[list.selectedIndex].text;
+				console.log(jokeType);
+				console.log(res[i].type.toLowerCase());
+				if(jokeTracker.indexOf(res[i].id) === -1 && (jokeType.toLowerCase() === res[i].type || jokeType === "Random" )){
 					let joke = document.createElement('p');
 					let punchline = document.createElement('p');
 					joke.innerText = res[i].setup;
