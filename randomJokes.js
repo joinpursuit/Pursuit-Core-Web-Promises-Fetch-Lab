@@ -2,10 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     getGeneralJokes();
     getProgrammingJokes();
     getRandomJokes();
+    selectedJokes();
     let resetJoke = document.querySelector('#newJokes')
     resetJoke.addEventListener('click', getGeneralJokes)
     resetJoke.addEventListener('click', getProgrammingJokes)
     resetJoke.addEventListener('click', getRandomJokes)
+    resetJoke.addEventListener('click', selectedJokes)
     let hideGeneral = document.getElementById("generalJokes")
     hideGeneral.addEventListener('click', hideGeneralPunchline)
     let hideProgramming = document.getElementById("programmingJokes")
@@ -14,6 +16,53 @@ document.addEventListener("DOMContentLoaded", () => {
     hideRandom.addEventListener('click', hideRandomPunchline)
 
 })
+
+//Current Select Item List
+//Lets hide id generalJokes, programmingJokes, and randomJokes
+// document.querySelector('#select-list').value
+
+function selectedJokes () {
+    let generalJoke = document.getElementById("generalJokes");
+    let programmingJoke = document.getElementById("programmingJokes");
+    let randomJoke = document.getElementById("randomJokes");
+    let selectedJoke = document.getElementById('select-list').value
+
+    if (selectedJoke === "General Jokes"){
+        generalJoke.style.display = "block";
+        programmingJoke.style.display = "none"
+        randomJoke.style.display = "none"
+    } else if (selectedJoke === "Programming Jokes") {
+        generalJoke.style.display = "none";
+        programmingJoke.style.display = "block";
+        randomJoke.style.display = "none";
+    } else if (selectedJoke === "Random Jokes") {
+        generalJoke.style.display = "none";
+        programmingJoke.style.display = "none";
+        randomJoke.style.display = "block";
+    } else {
+        generalJoke.style.display = "block";
+        programmingJoke.style.display = "block";
+        randomJoke.style.display = "block";
+    }
+}
+
+function hideProgrammingJoke () {
+    let joke = document.getElementById("programmingJokes");
+    if (joke.style.display === "none") {
+        joke.style.display = "block";
+    } else {
+        joke.style.display = "none"
+    }
+}
+
+function hideRandomJoke () {
+    let joke = document.getElementById("randomJokes");
+    if (joke.style.display === "none") {
+        joke.style.display = "block";
+    } else {
+        joke.style.display = "none"
+    }
+}
 
 function getGeneralJokes () {
 
