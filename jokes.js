@@ -10,6 +10,7 @@ function getRandomJoke() {
             return response.json();
         })
         .then(response => {
+            emptyContainer()
             jokez(response)
         })
         .catch(err => {
@@ -18,6 +19,18 @@ function getRandomJoke() {
         })
 }
 
+function getContainer() {
+    let container = document.querySelector('#container')
+    return container
+}
+
+function emptyContainer() {
+    const flipContainer = getContainer();
+    flipContainer.innerHTML = ' ';
+
+}
+
+
 //creating global paragraph tags
 let jokePara = document.createElement('p')
 let punchLine = document.createElement('p')
@@ -25,8 +38,7 @@ let punchLine = document.createElement('p')
 function jokez(pun) {
     console.log(pun);
     for (let i = 0; i < pun.length; i++) {
-        let container = document.querySelector('#container')
-
+        getContainer()
         //creating the elements
         let flipCard = document.createElement('div')
         let flipCard_inner = document.createElement('div')
@@ -63,6 +75,7 @@ function jokez(pun) {
 
     }
 }
+
 
 
 //old version of the code which no longer need
