@@ -1,0 +1,76 @@
+* {
+    outline: none;
+}
+body {
+    background-color: rgb(62, 117, 236);
+    padding: 0px;
+    margin: 0px;
+}
+
+#root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-between;
+    padding-top: 70px;
+}
+
+#root div {
+    background-color: rgb(17, 43, 194);
+    /* border: 5px solid black; */
+    width: 250px;
+    height: 150px;
+    font-size: 18px;
+    color: rgb(255, 123, 0);
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 150px;
+    border-radius: 5px;
+    box-shadow: 0px 12px 5px -10px rgb(35, 69, 216);
+    /* display: flex; */
+    /* flex-direction: column; */
+    padding: 5px;
+    box-sizing: border-box;
+    text-shadow: -1px 1px 3px black;
+    position: relative;
+}
+
+#nav {
+    position: fixed;
+    background-color: rgb(16, 86, 236);
+    width: 100vw;
+    height: 50px;
+    z-index: 2;
+    margin: 0px;
+    padding: 0px;
+}
+
+#random-btn {
+    position: sticky;
+    width: 200px;
+    height: calc(100% - 10px);
+    border-radius: 5px;
+    margin: 5px;
+    left: calc(50vw - 100px);
+    /* top: 0px; */
+    background-color: rgb(230, 84, 84);
+    color: white;
+}
+
+p {
+    height: 125px;
+}
+
+p:last-child {
+    position: relative;
+    /* top: -100px; */
+    /* display: none; */
+    /* bottom: -100px; */
+    /* padding-bottom: 50px; */
+}
+
+.slideDown {
+    display: block;
+    position: relative;
+    transition: 1s ease-in all;
+}
