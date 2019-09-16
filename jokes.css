@@ -1,0 +1,57 @@
+body {
+    text-align: center;
+}
+
+
+#container {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+
+.flipCard {
+    background-color: transparent;
+    width: 24.86%;
+    height: 300px;
+    border: 1px solid white;
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
+}
+
+.flipCard_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.flipCard:hover .flipCard_inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flipCard_front,
+.flipCard_back {
+    font-size: 40px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flipCard_front {
+    background-color: #bbb;
+    color: black;
+}
+
+/* Style the back side */
+.flipCard_back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}
