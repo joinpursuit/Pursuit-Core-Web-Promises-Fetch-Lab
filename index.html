@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>Random Users</title>
+    <script src="index.js" text="text/javascript"></script>
+    <link href="index.css" rel="stylesheet" text="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <h1>Todos</h1>
+
+    <div id="loginDiv">
+            <label for="log">Enter Your Username:</label>
+            <input id="log" type="text" name="log" placeholder="Username">
+            <button id="signin">Sign In</button> OR
+            <button id="login">Log In</button>
+    </div>
+    <div id=logedinAs></div>
+    <hr>  
+        <form id="submitInput">
+            <label for="item">Add a to-do item:</label>
+            <input id="item" type="text" name="to_do_item" placeholder="TO DO">
+            <input id="submitTask" type="submit">
+        </form>
+        <hr>
+
+        <div id="selections">
+            <input id ="all" type="radio" name="choice" value="all" checked>
+            <label for="all">All</label>
+            <input id="finished" type="radio" name="choice" value="done">
+            <label for="finished">Finished</label>
+            <input id="pending" type="radio" name="choice" value="pending">
+            <label for="pending">To Do</label>      </div>
+        <div id="myList"></div>
+</body>
+
+</html>
