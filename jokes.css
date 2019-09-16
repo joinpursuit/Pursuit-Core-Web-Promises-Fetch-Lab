@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: bisque
+    background-color: bisque;
 }
 
 
@@ -9,14 +9,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: space-between
 }
 
 
 .flipCard {
     background-color: transparent;
     width: 24.86%;
-    height: 300px;
-    border: 1px solid white;
+    height: 400px;
     perspective: 1000px;
     /* Remove this if you don't want the 3D effect */
 }
@@ -55,4 +55,12 @@ body {
     background-color: dodgerblue;
     color: white;
     transform: rotateY(180deg);
+}
+button{
+    width: 90px;
+    height: 90px;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
 }
