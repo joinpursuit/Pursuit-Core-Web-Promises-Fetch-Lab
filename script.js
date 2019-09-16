@@ -1,39 +1,91 @@
-const makeCard = (jokes) => {
+let jokeHistory = [];
+
+const addCard = (jokes) => {
+    // console.log(jokes);
+    // console.log(jokes.length);
+    // console.log(typeof jokes);
+    makeCard(jokes);
+}
+
+const makeCard = (joke) => {
     const root = document.querySelector('#root');
+    const container = document.createElement('div');
+    const setup = document.createElement('p');
+    const punchline = document.createElement('p');
 
-    jokes.forEach(joke => {
-        const container = document.createElement('div');
-        const setup = document.createElement('p');
-        const punchline = document.createElement('p');
+    // console.log(joke);
+    setup.innerText = joke.setup;
+    setup.classList.add('card');
+    // setup.hidden = true;
+    punchline.innerText = joke.punchline;
+    // punchline.hidden = true;
+    punchline.classList.add('punchline');
+    container.dataset.toggle = true;
 
-        // console.log(joke);
-        setup.innerText = joke.setup;
-        setup.classList.add('card');
-        // setup.hidden = true;
-        punchline.innerText = joke.punchline;
-        // punchline.hidden = true;
-        punchline.classList.add('punchline');
-        container.dataset.toggle = true;
-
-        container.appendChild(setup);
-        container.appendChild(punchline);
-        container.classList.add('card');
-        root.appendChild(container);
-    })
+    container.appendChild(setup);
+    container.appendChild(punchline);
+    container.classList.add('card');
+    root.appendChild(container);
 }
 
-const fetchTenJokes = () => {
-    fetch('https://fsw62-jokes-api.herokuapp.com/jokes/random/6')
-        .then(data => {
-            return data.json();
-        })
-        .then(jokes => {
-            // console.log(jokes);
-            makeCard(jokes);
-        })
+const fetchTenJokes = (type = 'random', num = 3) => {
+    // console.log(num);
+
+    if (type === 'random') {
+        fetch(`https://fsw62-jokes-api.herokuapp.com/jokes/random/${num}`)
+            .then(data => {
+                return data.json();
+            })
+            .then(jokes => {
+                // console.log(jokes);
+                let counter = 0;
+                for (let i = 0; i < jokes.length; i++) {
+                    if (jokeHistory.includes(jokes[i].id)) {
+                        continue;
+                    } else {
+                        addCard(jokes[i]);
+                        jokeHistory.push(jokes[i].id);
+                    }
+                }
+
+                if (counter > 0) {
+                    fetchTenJokes(type, counter);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    } else {
+        fetch(`https://fsw62-jokes-api.herokuapp.com/jokes/${type}/random/`)
+            .then(data => {
+                return data.json();
+            })
+            .then(jokes => {
+                // console.log(jokes);
+
+                if (jokeHistory.includes(jokes[0].id)) {
+                    num = num + 1;
+                    // continue;
+                } else {
+                    addCard(jokes[0]);
+                    jokeHistory.push(jokes[0].id);
+                }
+
+                if (num == 1) {
+                    return;
+                } else {
+                    return fetchTenJokes(type, num - 1);
+                }
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
 }
 
-fetchTenJokes();
+fetchTenJokes('random', 3);
 
 window.addEventListener('click', event => {
     // console.dir(event.target.parentNode);
@@ -85,5 +137,11 @@ window.addEventListener('click', event => {
 
 document.querySelector('#random-btn').addEventListener('click', () => {
     document.querySelector('#root').innerHTML = '';
-    fetchTenJokes();
+    const selectValue = document.querySelector('#type').value;
+    const numOfJokes = document.querySelector('#numOfJokes').value;
+
+    // console.log(selectValue)
+    // console.log(numOfJokes)
+
+    fetchTenJokes(selectValue, numOfJokes);
 })

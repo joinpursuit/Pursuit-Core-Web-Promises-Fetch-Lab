@@ -11,7 +11,14 @@
 
 <body>
     <div id="nav">
-        <button id="random-btn">Give me more Jokes</button>
+        
+        <select name="type" id="type">
+            <option value="random">Random</option>
+            <option value="general">General</option>
+            <option value="programming">Programming</option>
+        </select>
+        <input type="text" id="numOfJokes" placeholder="How many jokes?" value="1" min="0">
+        <button id="random-btn">Make me Laugh!</button>
     </div>
     <div id="root"></div>
 
