@@ -43,6 +43,10 @@ body {
     z-index: 2;
     margin: 0px;
     padding: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
 }
 
 #random-btn {
@@ -51,10 +55,13 @@ body {
     height: calc(100% - 10px);
     border-radius: 5px;
     margin: 5px;
-    left: calc(50vw - 100px);
+    /* left: calc(50vw - 100px); */
+
     /* top: 0px; */
     background-color: rgb(230, 84, 84);
     color: white;
+    font-weight: 900;
+    font-size: 1.1em;
 }
 
 p {
@@ -73,4 +80,15 @@ p:last-child {
     display: block;
     position: relative;
     transition: 1s ease-in all;
+}
+#numOfJokes {
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    width: 100px;
+}
+#type {
+    height: 20px;
+    font-weight: 900;
 }
