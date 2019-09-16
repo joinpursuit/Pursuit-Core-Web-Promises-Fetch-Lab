@@ -1,0 +1,33 @@
+div {
+    border: 1px solid red;
+    text-align: center
+}
+
+/* p:last-child {
+    visibility: hidden;
+}
+
+p:last-child:hover {
+    visibility: visible
+} */
+
+h1 {
+    text-align: center
+}
+
+div:hover {
+    background-color: rgb(254, 254, 41)
+}
+
+button {
+    background-color: blue;
+    color: yellow;
+    padding: 20px 30px;
+    font-size: 20px;
+    display: inline-flex;
+    text-align: center
+}
+
+button:hover {
+    background-color: blueviolet;
+}
