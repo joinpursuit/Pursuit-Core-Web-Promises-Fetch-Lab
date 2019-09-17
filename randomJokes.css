@@ -4,14 +4,60 @@
     z-index: 2;
 }                */
 
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#joke-pool {
+    display: grid;
+    /* padding: 30px; */
+    height: 70%;
+    /* width: 100%; */
+    grid-template-columns: 1fr 1fr 1fr;
+    background-image: url(./beach.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 #generalJokes {
-    background-color: aqua;
+    display: flex;
+    grid-column: 2 / 3;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    position: relative;
+    padding-top: 30%;
+    padding-left: 10px;
+    /* margin: 10px; */
+    background-image: url(./goldenPage.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 #programmingJokes {
-    background-color: chartreuse;
-}
+    display: flex;
+    grid-column: 2 / 3;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    position: relative;
+    padding-top: 30%;
+    padding-left: 10px;
+    /* margin: 10px; */
+    background-image: url(./goldenPage.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;}
 
 #randomJokes {
-    background-color: darkorange;
-}
+    display: flex;
+    grid-column: 2 / 3;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    position: relative;
+    padding-top: 30%;
+    padding-left: 10px;
+    /* margin: 10px; */
+    background-image: url(./goldenPage.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;}
