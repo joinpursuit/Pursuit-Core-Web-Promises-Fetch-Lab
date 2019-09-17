@@ -3,8 +3,6 @@
 
 
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   drawTen();
 
@@ -13,20 +11,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let cardsFlex = document.querySelector("#cards-flex");
   cardsFlex.addEventListener('click', (e) => {
-    console.dir(e.target.parentNode);
       if (e.target.parentNode.className === "joke-card") {
-        // e.target.parentNode.childNodes[1].className
-        if (e.target.parentNode.childNodes[1].className === "card-punchline") {
-          e.target.parentNode.childNodes[1].className = "card-punchline showing";
+        let punchline = e.target.parentNode.childNodes[1];
+        if (punchline.getAttribute('style') === "opacity: 0;") {
+          punchline.setAttribute('style', "opacity: 1;");
         } else {
-          e.target.parentNode.childNodes[1].className = "card-punchline";
+          punchline.setAttribute('style', "opacity: 0;");
         }
       }
   });
-
 });
 
+const clearJokes = () => {
+  const cardsFlex = document.querySelector("#cards-flex");
+  while (cardsFlex.firstChild) {
+    cardsFlex.removeChild(cardsFlex.lastChild);
+  }
+}
+
 function drawTen() {
+  clearJokes();
+  
   fetch("https://official-joke-api.appspot.com/random_ten")
     .then(response => {
         if (response.status !== 200) {
@@ -39,8 +44,16 @@ function drawTen() {
         jokesArr.forEach(jokeObj => {
             makeCard(jokeObj);
         });
+        let cardsFlexArr = document.querySelector("#cards-flex").childNodes;
+        for (let i = 0; i < cardsFlexArr.length; i++) {
+          setTimeout(() => {
+            cardsFlexArr[i].setAttribute('style', 'opacity: 1;');
+          }, i * 40);
+        }
     })
-    // TODO MAKE CATCH 
+    .catch(err => {
+      console.log("err: ", err);
+    });
 }
 
 const makeCard = (jokeObj) => {
@@ -54,9 +67,9 @@ const makeCard = (jokeObj) => {
   let buildingCardPunch = document.createElement("div");
   buildingCardPunch.className = "card-punchline";
   buildingCardPunch.innerText = jokeObj.punchline;
+  buildingCardPunch.setAttribute('style', 'opacity: 0;');
       
   buildingCard.appendChild(buildingCardSetup);
   buildingCard.appendChild(buildingCardPunch);
   cardsFlex.appendChild(buildingCard);
-
 }
