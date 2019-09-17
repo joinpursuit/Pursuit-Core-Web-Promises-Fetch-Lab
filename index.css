@@ -1,33 +1,75 @@
-div {
-    border: 1px solid red;
-    text-align: center
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(51, 91, 51);
+    background-image: url(./poker-table-background-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-/* p:last-child {
-    visibility: hidden;
-}
-
-p:last-child:hover {
-    visibility: visible
-} */
 
 h1 {
-    text-align: center
-}
-
-div:hover {
-    background-color: rgb(254, 254, 41)
+    grid-column: 1/4;
+    text-align: center;
+    color: white;
 }
 
 button {
-    background-color: blue;
-    color: yellow;
-    padding: 20px 30px;
-    font-size: 20px;
-    display: inline-flex;
-    text-align: center
+    grid-column: 2/3;
+    width: 200px;
+    height: 40px;
+    justify-self: center;
+    margin: 20px;
+    background-color: gray;
+    background-image: linear-gradient(rgb(157, 157, 157), lightgray);
+    border: 2px solid darkgray;
+    font-size: 12px;
+    border-radius: 10px;
 }
 
 button:hover {
-    background-color: blueviolet;
+    background: yellow;
+    font-weight: bold
+}
+
+.maincontainer {
+    position: relative;
+    width: 250px;
+    height: 320px;
+    justify-self: center
+}
+
+.the-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.the-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: rgb(233, 66, 28);
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.the-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: lightgray;
+    color: black;
+    transform: rotateY(180deg);
+    text-align: center;
+    border-radius: 20px;
+}
+
+.the-card:hover {
+    transform: rotateY(180deg);
 }
