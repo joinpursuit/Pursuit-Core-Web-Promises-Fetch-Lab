@@ -1,31 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let button = document.querySelector('button');
+    let button = document.querySelector('#jokeButton');
     button.addEventListener('click', fetchJoke);
+})
+document.addEventListener('DOMContentLoaded', () => {
+    let button2 = document.querySelector('#removeAllJokes');
+    button2.addEventListener('click', deleteJokes);
 })
 
 const fetchJoke = () => {
-    fetch('https://cors-anywhere.herokuapp.com/https://official-joke-api.appspot.com/random_joke')
+    fetch('https://fsw62-jokes-api.herokuapp.com/jokes/random/3') //https://official-joke-api.appspot.com/random_ten
     .then(response => {
         return response.json();
     })
     .then(dataObj => {
-    displayJoke(dataObj.setup);
+        renderJokeList(dataObj);
     })
      .catch(err => {
-        console.log("err: ", err)
+        console.log("err: ", err);
     })
 }
 
-const displayJoke = (joke) => {
-    let prevJoke = document.querySelector('p');
-    if (!prevJoke) {
-        let tellJoke = document.createElement('p');
-        tellJoke.innerHTML = joke;
-        document.body.appendChild(tellJoke);
-    } else {
-        let newJoke = document.createElement('p');
-        newJoke.innerText = joke;
-        prevJoke.parentNode.replaceChild(newJoke, prevJoke);
+
+const renderJokeList = (jokes) => {
+     let jokeUl = document.querySelector('#jokeList');
+     for (let i = 0; i < jokes.length;i++){
+        var tellJoke = document.createElement('h3');
+        tellJoke.setAttribute('class', 'joke');
+        tellJoke.innerHTML = jokes[i].setup;
+        jokeUl.appendChild(tellJoke);
+        let punchLine = document.createElement('p');
+        punchLine.setAttribute('class', 'punch');
+        punchLine.innerHTML = jokes[i].punchline;
+        jokeUl.appendChild(punchLine);
     }
+   
+    
 }
- 
+function deleteJokes() {
+        let jokeUl = document.querySelector('#jokeList');
+        let punchLine = document.querySelectorAll('p');
+        let tellJoke = document.querySelectorAll('h3');
+
+        for(let i = 0; i < punchLine.length; i++) {
+            let punchLineElement = punchLine[i]
+            let jokeElement = tellJoke[i]
+            jokeUl.removeChild(punchLineElement);
+            jokeUl.removeChild(jokeElement);
+        }
+      
+} 
+
+
