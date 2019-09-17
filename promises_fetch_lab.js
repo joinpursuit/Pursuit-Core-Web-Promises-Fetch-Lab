@@ -2,33 +2,41 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchJokes()
 })
 
-let jokeObject = {};
+
 const fetchJokes = () => {
   fetch("https://official-joke-api.appspot.com/jokes/random")//creates promise that will try to obtain data
     .then((response)=> {
-      return response.json()
+    jokeObject = response.json()
+    return jokeObject
     })
     .then((obj) => {
       jokeObject = obj
       appendJoke(obj.setup)
-      return obj
     })
 }
 
-const appendJoke = ((text) => {
-    let div = document.querySelector("#joke");
-    paragraph = document.createElement("p");
-    paragraph.innerText = text;
-    div.appendChild(paragraph);
-    paragraph.addEventListener("click", showAnswer)
+const appendJoke = ((joke) => {
+    div = document.querySelector("#div");
+    setup = document.createElement("p");
+    setup.innerText = joke;
+    div.appendChild(setup);
+    setup.addEventListener("click", showAnswerOnce)
 })
 
-const showAnswer = () => {
-        let answer = jokeObject.punchline;
-        // let para = document.querySelector("p")
-        // para.innerText += answer
-        let div = document.querySelector("#joke");
+const showAnswerOnce = () => {
+        answer = jokeObject.punchline;
         punchline = document.createElement("p");
         punchline.innerText = answer;
         div.appendChild(punchline);
+
+        setup.removeEventListener("click", showAnswerOnce)
+        setup.addEventListener("click", hideAnswer)
+
   }
+
+  const hideAnswer = () => {
+  //  punchline.div.removeChild(punchline)
+   punchline.innerText = ""
+  }
+
+  
