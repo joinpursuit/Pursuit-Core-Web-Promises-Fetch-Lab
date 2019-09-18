@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     button1.addEventListener('click',fetchJokes) 
 })
 
-let toggle = false
-
 function fetchJokes() {
     console.log("running")
     fetch("https://fsw62-jokes-api.herokuapp.com/jokes/random/5")
@@ -51,6 +49,7 @@ function revealPunchline(event) {
     // console.log("sibling", event.target.nextSibling)
     let siblingP = event.target.nextSibling
     // console.log(event.target.nextSibling.style.visibility)
+
     if (siblingP.style.visibility === "hidden") {
         siblingP.style.visibility = "visible "
     } else {
