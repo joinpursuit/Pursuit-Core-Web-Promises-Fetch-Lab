@@ -16,8 +16,6 @@ function fetchJoke () {
 document.addEventListener('DOMContentLoaded', () => {
     let button = document.querySelector('#jokeButton');
     button.addEventListener('click', fetchJoke);
-})
-document.addEventListener('DOMContentLoaded', () => {
     let button2 = document.querySelector('#removeAllJokes');
     button2.addEventListener('click', deleteJokes);
 })
