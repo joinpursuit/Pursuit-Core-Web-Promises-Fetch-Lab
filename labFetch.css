@@ -1,0 +1,35 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 150%;
+    font-family: 'Cookie',
+        cursive;
+    color: rgb(200, 43, 122);
+    background-color: pink;
+}
+
+h1 {
+    color: palevioletred;
+    font-family: 'Cookie',
+        cursive;
+}
+
+button {
+    border: none;
+    border-radius: 200px round;
+    padding: 100 pix;
+    background-color: peachpuff;
+    font-family: 'Cookie',
+        cursive;
+    color: palevioletred;
+    font-size: 90%;
+    box-shadow: 0 9px palevioletred;
+    width: 100px;
+    height: 50px;
+}
+
+p {
+    font-family: 'Cookie',
+        cursive;
+    color: darkblue;
+}
