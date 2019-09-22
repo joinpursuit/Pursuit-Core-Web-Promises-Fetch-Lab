@@ -7,7 +7,21 @@
     <body>
         <h1>Cyber Comedy Central</h1>
         <p></p>
-        <ul id="joke-list"></ul>
-        <button>Get Ten Random</button>
+        
+        <dl id="insert-jokes">
+            <dt id="jokes"></dt>
+            <dd id="punchlines"></dd>
+        </dl>
+    
+        <style>
+            dd {
+                margin-bottom: 25px;
+                transition-duration: 10s;
+            }
+
+        </style>
+        
+        <button onclick="window.location.reload()">Refresh for new jokes</button>
+        
     </body>
 </html>

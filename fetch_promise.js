@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let button = document.querySelector("button");
-    button.addEventListener("click", fetchJoke)
+    fetchJoke()
 })
 const fetchJoke = () => {
 
@@ -16,13 +15,22 @@ const fetchJoke = () => {
         })
 
     displayJoke = (jokes) => {
-        let jokeUl = document.querySelector('#joke-list');
+        let jokeDl = document.querySelector('#insert-jokes');
         for (let joke of jokes) {
-            let jokeLi = document.createElement('li')
-            jokeLi.innerText = joke.setup
-            jokeUl.appendChild(jokeLi)
+            let jokeDt = document.createElement('dt')
+            jokeDt.innerText = joke.setup
+            jokeDl.appendChild(jokeDt)
+            let punchlineDd = document.createElement('dd')
+            punchlineDd.innerText = joke.punchline
+            jokeDl.appendChild(punchlineDd)   
         }
+            
     }
+
 }
+
+
+
+
 
 
