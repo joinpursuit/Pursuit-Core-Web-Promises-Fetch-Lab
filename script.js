@@ -28,9 +28,13 @@ const makeCard = (joke) => {
     root.appendChild(container);
 }
 
+
 const fetchTenJokes = (type = 'random', num = 3) => {
     // console.log(num);
-
+    // if (jokeHistory.length === 372) {
+    //     document.querySelector('#random-btn').innerText = 'NO MORE JOKES';
+    //     break;
+    // }
     if (type === 'random') {
         fetch(`https://fsw62-jokes-api.herokuapp.com/jokes/random/${num}`)
             .then(data => {
