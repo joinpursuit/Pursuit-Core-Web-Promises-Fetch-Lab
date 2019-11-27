@@ -1,0 +1,15 @@
+.setup:hover {
+    cursor: pointer; 
+}
+
+ul {
+    list-style-type: none;
+}
+
+#parent {
+    padding: 0;
+}
+
+.setup {
+    padding-bottom: 15px;
+}
