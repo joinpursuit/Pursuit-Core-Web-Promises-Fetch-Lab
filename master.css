@@ -1,3 +1,7 @@
+body {
+    background: black;
+}
+
 .setup:hover {
     cursor: pointer; 
 }
@@ -12,4 +16,9 @@ ul {
 
 .setup {
     padding-bottom: 15px;
+    color: lightblue;
+}
+
+.punchline {
+    color: pink;
 }
