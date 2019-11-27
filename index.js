@@ -1,22 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const getJokes = () => {
-            fetch("https://official-joke-api.appspot.com/random_ten").then(response => {
-                return response.json()
-            }).then(jokes => {
+        fetch("https://official-joke-api.appspot.com/random_ten").then(res => {
+            if (!res.ok) {
+                throw Error(res.statusText)
+            }
+            return res.json()
+        }).then(res => {
 
 
-                let ul = document.querySelector("ul");
-                jokes.forEach(jokes => {
-                    let li = document.createElement("li")
-                    li.innerText = jokes.id
-                    ul.appendChild(li)
-                })
-
-
+            let ul = document.querySelector("ul");
+            res.forEach(joke => {
+                let li = document.createElement("li")
+                li.innerText = joke.setup
+                ul.appendChild(li)
             })
-        }
-        .catch(error => {
-            console.log(error)
+
+
         })
+    }
+
 })
