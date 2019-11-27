@@ -20,14 +20,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 debugger
                 let punchline = document.createElement("li")
                 punchline.innerText = jokes.punchline;
-                punchline.style = "display:none"
+                punchline.style.visibility ="hidden"
                 joke.appendChild(punchline)
                 ul.appendChild(joke)
                 // })
                 // li.addEventListener("click", ()=>{
-                    ul.addEventListener("click", ()=>{
-        
-                        punchline.style = ""
+                    ul.addEventListener("click", (e)=>{
+                        debugger
+                        if(e.target.lastElementChild.style.visibility ="hidden"){
+                            e.target.lastElementChild.style.visibility = "visible"
+                        } else {
+                            e.target.lastElementChild.style.visibility ="hidden"
+                        }
                 })
               
             })
