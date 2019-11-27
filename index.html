@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch Lab</title>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {})
+
+    let jokeObject = {}; 
+    const jokeCreator = () => {
+    fetch("https://official-joke-api.appspot.com/jokes/random")
+        .then((jokeReponse) => {
+            return jokeReponse.json();
+        })
+        .then((jokeObj) => {
+            jokeObject = jokeObj
+            newListItem(jokeObj.setup)
+            return(jokeObj)
+        })
+    }
+    jokeCreator(); 
+    const newListItem = (newItemContent) => {
+    let newItem = document.querySelector("div")
+    if(!newItem){
+        newItem = document.createElement("div");
+        newItem.innerText = newItemContent;
+        document.body.appendChild(newItem)
+        newItem.class = "closed"
+        newItem.addEventListener("click", revealAnswer)
+    }   else {
+        let newJoke = document.createElement("div");
+        newJoke.innerText = newItemContent;
+        newItem = document.body.replaceChild(newJoke, newItem)
+        newJoke.addEventListener("click", revealAnswer)
+    }}
+
+    </script>
+
+    <style type = "text/css">
+    #button {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 4px 2px;
+      background-color: #1c87c9;
+      border: 3px solid #095484;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 15px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    body{
+        text-align: center;
+        font-size: x-large;
+        background-color:lightslategray;
+          
+    }
+    </style>
+
+</head>
+<body>
+    <img src="https://pmcdeadline2.files.wordpress.com/2019/11/rev-1-jok-04413_high_res_jpeg.jpeg?crop=0px%2C604px%2C6000px%2C3363px&resize=681%2C383" alt="The Joker">
+    <br>
+    <button id="button" onclick="jokeCreator()"><h1>Jokes Button</h1></button>
+    
+</body>
+</html>
