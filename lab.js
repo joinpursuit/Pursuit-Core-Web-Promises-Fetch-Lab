@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let ul = document.createElement("ul")
         jokes.forEach(joke => {
             let li = document.createElement("li")
-            li.innerText = joke.setup
+            li.innerText = joke.setup;
+            // let punchline = document.createElement("li")
+            // punchline.innerText = joke.punchline
             ul.appendChild(li)
         })
         document.body.appendChild(ul)
