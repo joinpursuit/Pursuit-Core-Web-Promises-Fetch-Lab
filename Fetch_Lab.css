@@ -1,0 +1,18 @@
+body {
+    display: grid
+}
+
+.joke {
+    height:200px; 
+    width: 200px;
+
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    width: 200px;
+    height: 130px;
+    }
