@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker&display=swap');
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif, cursive;
+    text-align: center;
+    background-color: rgb(128, 169, 245);
+}
+hr {
+    margin: 10px 0;
+}
+
+h1 {
+    padding: 10px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 47px;
+}
+
+#loginDiv {
+
+}
+
+#myList {
+    text-align: left;
+}
+#myList div {
+    margin: 10px 20px;
+    /* padding: 10px 20px; */
+    border-radius: 10px;
+    background-color: blanchedalmond;
+    position: relative;   
+}
+
+#myList button {
+    background-color: rgb(238, 81, 81);
+    position: absolute;
+    /* top: 15%; */
+    right: 20px;
+    border-radius: 7px;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    height: 100%    ;
+    width: 50px;
+    font-size: larger;
+}
+
+#myList label {
+    font-family: 'Indie Flower', cursive;
+    font-weight: bolder;
+    font-size: x-large;
+    padding: 0 20px;
+}
+
+/* #myList input {
+} */
