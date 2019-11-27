@@ -13,16 +13,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }).then(jokes=>{
             // debugger
             // jokes.forEach(joke=>{
-                let li = document.createElement('li')
-                li.innerText = jokes.setup
-                ul.appendChild(li)
-            // })
-            // li.addEventListener("click", ()=>{
+                
+                
+                let joke = document.createElement("li")
+                joke.innerText = jokes.setup
+                debugger
+                let punchline = document.createElement("li")
+                punchline.innerText = jokes.punchline;
+                punchline.style = "display:none"
+                joke.appendChild(punchline)
+                ul.appendChild(joke)
+                // })
+                // li.addEventListener("click", ()=>{
+                    ul.addEventListener("click", ()=>{
+        
+                        punchline.style = ""
+                })
               
-            }).then(punchline=>{
-                let para = document.createElement("p")
-                li.innerText = punchline.punchline
-                ul.appendChild(para)
             })
         })
     // })
