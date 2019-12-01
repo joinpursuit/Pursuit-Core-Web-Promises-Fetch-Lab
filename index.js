@@ -14,6 +14,5 @@ document.addEventListener("DOMContentLoaded", () => {
         const hidePunch = () =>{
             
         }
-        
     }).catch(err => console.log(err))
 })
