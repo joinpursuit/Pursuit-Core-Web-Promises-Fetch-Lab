@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("https://cors-anywhere.herokuapp.com/https://official-joke-api.appspot.com/random_ten").then(res => {
+    let url = "https://cors-anywhere.herokuapp.com/https://official-joke-api.appspot.com/jokes/general/ten";
+    fetch(url).then(res => {
         if (!res.ok) {
             throw Error(res.statusText + " was the error")
         }
@@ -22,14 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.reload();
         })
 
-        let select = document.querySelector("#selector")
-
         document.body.appendChild(ul)
         document.body.appendChild(button);
     }).catch(err => {
         debugger
     })
-
+    
     let ul = document.querySelector("#jokes");
     ul.addEventListener("click", (e) => {
         let punchline = e.target.querySelector("p");
@@ -40,5 +39,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
+    let select = document.querySelector("#selector");
+    select.addEventListener("change", (e) => {
+        let name = e.target.querySelector("option");
+        if(name.innerText === "random"){
+            url = "https://official-joke-api.appspot.com/jokes/random/ten";
+        } else if (name.innerText === "programming"){
+            url = "https://official-joke-api.appspot.com/jokes/programming/ten";
+        } else if (name.innerText === "general"){
+            url = "https://official-joke-api.appspot.com/jokes/general/ten";
+        }
+    })
+
 })
+
+
 
