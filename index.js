@@ -5,25 +5,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         return res.json()
     }).then(res => {
-        let ul = document.createElement("ul")
+        let ul = document.querySelector("#jokes")
         res.forEach((joke) => {
             let li = document.createElement("li")
-            let p = document.createElement("p")
-            li.addEventListener("click", () => {
-                p.innerText = joke.punchline
-                li.appendChild(p)
-                li.addEventListener("dblclick", () => {
-                    p.innerText = ""
-                })
-            })
-            li.innerText = joke.setup
-            ul.appendChild(li)
+            li.innerText = joke.setup;
+            let p = document.createElement("p");
+            p.innerText = joke.punchline;
+            p.style.display = "none";
+            li.appendChild(p);  
+            ul.appendChild(li);
         })
+
         let button = document.createElement("button")
         button.innerHTML = "REFRESH"
         button.addEventListener("click", ()=> {
             window.location.reload();
         })
+
         let select = document.querySelector("#selector")
 
         document.body.appendChild(ul)
@@ -31,27 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }).catch(err => {
         debugger
     })
+
+    let ul = document.querySelector("#jokes");
+    ul.addEventListener("click", (e) => {
+        let punchline = e.target.querySelector("p");
+        if(punchline.style.display === "none"){
+            punchline.style.display = "block";
+        } else {
+            punchline.style.display = "none";
+        }
+    })
+
 })
 
-// createSelect = function(){
-//     let selectDiv = document.querySelector("#select");
-//     let form = document.createElement("form");
-//     form.id = "selectForm";
-//     let select = document.createElement("select");
-//     select.name = "joketype"
-//     select.form = "selectForm"
-//     let option1 = document.createElement("option");
-//     option1.value = "general"
-//     option1.innerText = "General";
-//     let option2 = document.createElement("option");
-//     option2.value = "random"
-//     option2.innerText = "Random";
-//     let option3 = document.createElement("option");
-//     option3.value = "programming"
-//     option3.innerText = "Programming";
-//     select.appendChild(option1);
-//     select.appendChild(option2);
-//     select.appendChild(option3);
-//     selectDiv.appendChild(form);
-//     selectDiv.appendChild(select);
-// }
