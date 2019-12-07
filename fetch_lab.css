@@ -1,0 +1,10 @@
+.joke-card {
+    background: lightcoral;   
+    border-radius: 6px;
+    max-height: auto;
+    overflow: hidden;
+    padding: 2px;
+    width: 30%;  
+    transition: max-height 500ms ease-in-out;  
+    
+  }
