@@ -1,0 +1,44 @@
+html, body, #buttonAndJoke {
+    height: 100%;
+}
+
+#buttonAndJoke {
+    grid-template-rows: repeat(4, 1fr);
+}
+
+#joke1 {
+    grid-row: 1;
+    height: 25%;
+}
+
+#joke2 {
+    grid-row: 2;
+    height: 25%;
+}
+
+#joke3 {
+    grid-row: 3;
+    height: 25%;
+}
+/* #punch1 {
+    grid-row: 1;
+    height: 25%;
+}
+
+#punch2 {
+    grid-row: 2;
+    height: 25%;
+}
+
+#punch3 {
+    grid-row: 3;
+    height: 25%;
+} */
+
+#button {
+    grid-row: 4;
+    height: 25%;
+}
+.jokes {
+    background-color: blueviolet;
+}
