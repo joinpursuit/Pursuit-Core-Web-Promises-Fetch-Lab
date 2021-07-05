@@ -1,0 +1,30 @@
+body{
+    background-image: url("https://img.discogs.com/CktZ91DJK4uUfblhE96nmmm4b6E=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-353685-1454666062-5394.jpeg.jpg")
+
+}
+#button {
+  
+
+    padding: 20px;
+    border:10px solid #000000;
+    border-radius: 20%;
+    display:inline-block;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    background-color:rgb(248, 3, 3);
+}
+h1 {
+    font-family: Georgia, serif;
+font-size: 25px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #000000;
+font-weight: 700;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: uppercase;
+text-align: center;
+
+}
