@@ -1,0 +1,162 @@
+ul .joke{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+/* h3{
+    width: auto;
+} */
+.joke{
+    /* position: relative; */
+    border-top: 1px solid blue;
+    border-left: 1px solid blue;
+    border-right: 1px solid blue;
+    border-bottom: 1px solid blue;
+    margin-bottom: -16px;
+    margin-top: 50px;  
+    width:50%;
+    
+}
+.punch{
+    position: relative;
+    /* margin-top: 0; */
+    border-top: 1px solid white;
+    top: -1px;
+    border-left: 1px solid blue;
+    border-right: 1px solid blue;
+    border-bottom: 1px solid blue;
+    width:25%;
+    font-size: 16px;
+    background-color: beige;
+}
+/* h3{
+    list-style-type: disc;
+} */
+
+#joke0 {
+    outline:none;
+    cursor:pointer;
+    }
+    
+#punch0 {
+    display:none;
+    }
+    
+    #joke0:focus + #punch0{
+    display:block;
+    }
+
+#joke1 {
+        outline:none;
+        cursor:pointer;
+        }
+        
+#punch1 {
+        display:none;
+        }
+        
+#joke1:focus + #punch1{
+        display:block;
+        }
+
+#joke2 {
+            outline:none;
+            cursor:pointer;
+            }
+            
+#punch2 {
+            display:none;
+            cursor:pointer;
+            }
+            
+#joke2:focus + #punch2{
+    display:block;
+}
+
+#joke2:target + #punch2{
+    visibility: hidden;
+    cursor:pointer;
+}
+#joke3 {
+    outline:none;
+    cursor:pointer;
+    }
+    
+#punch3 {
+    display:none;
+    }
+    
+    #joke3:focus + #punch3{
+    display:block;
+    }
+    #joke4 {
+        outline:none;
+        cursor:pointer;
+        }
+        
+    #punch4 {
+        display:none;
+        }
+        
+        #joke4:focus + #punch4{
+        display:block;
+        }
+        #joke5 {
+            outline:none;
+            cursor:pointer;
+            }
+            
+        #punch5 {
+            display:none;
+            }
+            
+            #joke5:focus + #punch5{
+            display:block;
+            }        
+            #joke6 {
+                outline:none;
+                cursor:pointer;
+                }
+                
+            #punch6 {
+                display:none;
+                }
+                
+                #joke6:focus + #punch6{
+                display:block;
+                }
+                #joke7 {
+                    outline:none;
+                    cursor:pointer;
+                    }
+                    
+                #punch7 {
+                    display:none;
+                    }
+                    
+                    #joke7:focus + #punch7{
+                    display:block;
+                    }
+                    #joke8 {
+                        outline:none;
+                        cursor:pointer;
+                        }
+                        
+                    #punch8 {
+                        display:none;
+                        }
+                        
+                        #joke8:focus + #punch8{
+                        display:block;
+                        }
+                        #joke9 {
+                            outline:none;
+                            cursor:pointer;
+                            }
+                            
+                        #punch9 {
+                            display:none;
+                            }
+                            
+                            #joke9:focus + #punch9{
+                            display:block;
+                            }
