@@ -1,0 +1,21 @@
+body {
+    background-color: bisque;
+}
+
+.invisible {
+    /* opacity:0  */
+    display: none;
+    
+
+}
+li {
+    display: inline-block;
+    border: 20px solid orangered;
+    padding: 50px 50px;
+    color: green; 
+
+}
+p {
+    display: inline-block;
+    border: 5px solid yellow;
+}
